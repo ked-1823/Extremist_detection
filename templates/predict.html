@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Extremist Message Detector</title>
+    <title>Prediction Result</title>
 
     <style>
         body {
@@ -36,50 +36,31 @@
         h2 {
             color: #234C6A;
             margin: 0;
-            margin-bottom: 18px;
             font-size: 28px;
             font-weight: 700;
         }
 
-        textarea {
-            width: 100%;
-            height: 150px;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 15px;
-            resize: none;
-            outline: none;
-            background: #fafafa;
-            transition: 0.25s;
+        .score {
+            font-size: 16px;
+            color: #333;
+            margin-top: 8px;
+            font-weight: 500;
         }
 
-        textarea:focus {
-            border-color: #234C6A;
-            box-shadow: 0 0 5px rgba(35, 76, 106, 0.4);
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
+        .badge {
+            display: inline-block;
             margin-top: 18px;
-            background: #234C6A;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 17px;
-            cursor: pointer;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 15px;
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(35, 76, 106, 0.3);
-            transition: 0.25s;
-        }
-
-        button:hover {
-            background: #1c3f59;
+            background: #234C6A;
+            color: #fff;
+            box-shadow: 0 3px 8px rgba(35, 76, 106, 0.3);
         }
 
         .footer {
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 12px;
             color: #777;
         }
@@ -88,15 +69,16 @@
 
 <body>
     <div class="card">
-        <h2>Extremist Message Detector</h2>
-        
-        <form action="/predict" method="post">
-            <textarea name="message" placeholder="Type your message..."></textarea>
-            <button type="submit">Analyze</button>
-        </form>
+        <h2>Prediction Result</h2>
+
+        <div class="badge">
+            {{ label }}
+        </div>
+
+        <p class="score">Confidence Score: <strong>{{ score }}</strong></p>
 
         <div class="footer">
-            NLP • TensorFlow • Flask • Text Classification
+            Extremism Detection Model • Flask | TensorFlow | NLP
         </div>
     </div>
 </body>
