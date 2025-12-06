@@ -1,0 +1,12 @@
+Flask
+gunicorn
+
+tensorflow-cpu==2.12.0
+# Use CPU version to avoid GPU install issues on Render
+
+numpy
+pandas
+nltk
+
+joblib
+scikit-learn
